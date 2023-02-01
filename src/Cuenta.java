@@ -12,21 +12,23 @@ public class Cuenta {
         }
 
     public double getSaldoDeCuenta() {
-        return saldoDeCuenta;
+        return this.saldoDeCuenta;
     }
     public HashMap<String, String>  getDatosCuenta() {
-        String saldoCuentaMap = String.valueOf(saldoDeCuenta);
-        String numeroCuentaMap = String.valueOf(numeroDeCuenta);
+        String saldoCuentaMap = String.valueOf(this.saldoDeCuenta);
+        String numeroCuentaMap = String.valueOf(this.numeroDeCuenta);
         HashMap<String, String> datosGenerales = new HashMap<>();
-        datosGenerales.put("nombreDelTitular",nombreDelTitular);
+        datosGenerales.put("nombreDelTitular",this.nombreDelTitular);
         datosGenerales.put("saldoDeCuenta", saldoCuentaMap);
         datosGenerales.put("numeroDeCuenta", numeroCuentaMap);
         return datosGenerales;
     }
     public void setIngreso(int nuevoIngreso) {
         int ingreso = nuevoIngreso;
+        this.saldoDeCuenta = this.saldoDeCuenta + ingreso;
         }
     public void setRetiro (int nuevoRetiro) {
         int retiro = nuevoRetiro;
+        this.saldoDeCuenta = this.saldoDeCuenta - retiro;
         }
 }
